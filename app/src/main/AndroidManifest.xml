@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="screener.mosque.org.mosquescreener">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_masjid_bilal"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_masjid_bilal"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <receiver android:name=".schedule.FajrAlarmReceiver" />
+        <receiver android:name=".schedule.DohrAlarmReceiver" />
+        <receiver android:name=".schedule.AsrAlarmReceiver" />
+        <receiver android:name=".schedule.MaghrebAlarmReceiver" />
+        <receiver android:name=".schedule.IshaaAlarmReceiver" />
+        <receiver android:name=".schedule.SchedulePrayers" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

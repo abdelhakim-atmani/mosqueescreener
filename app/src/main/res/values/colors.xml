@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorGreen">#1c6949</color>
+    <color name="green_light">#a6de5f</color>
+    <color name="green_dark">#1d6b03</color>
+    <color name="colorBrownLight">#cfa462</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+
+    <color name="light_font">#FBFBFB</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="text_shadow_white">#FFFFFF</color>
+
+
+    <color name="White">#FFF</color>
+    <color name="Black">#000</color>
+    <color name="Grey">#e0e0e2</color>
+    <color name="DarkGrey">#4F4F4F</color>
+    <color name="Green">#8fd405</color>
+    <color name="TransparentGrey">#7F000000</color>
+
+    <color name="timeBarLight">#8b8d90</color>
+    <color name="timeBarDark">#2e2e30</color>
+    <color name="timeBarGreen">#CDDD26</color>
+    <color name="timeBarGreenLight">#ebf0c5</color>
+    <color name="timeBarGreenDark">#5a6729</color>
+</resources>

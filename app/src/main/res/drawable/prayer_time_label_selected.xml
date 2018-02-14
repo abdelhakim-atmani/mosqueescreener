@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <!-- This is for border bottom but
+    you can change this according to your need -->
+    <item
+        android:left="2dp">
+        <shape android:shape="rectangle">
+
+            <solid android:color="@color/timeBarLight"/>
+        </shape>
+    </item>
+    <item
+        android:right="2dp">
+        <shape android:shape="rectangle">
+
+            <solid android:color="@color/timeBarLight"/>
+        </shape>
+    </item>
+
+    <item android:right="2dp" android:left="2dp">
+        <shape  android:shape="rectangle">
+            <solid android:color="@color/timeBarGreen" />
+
+            <padding
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <gradient
+                android:startColor="@color/timeBarGreenDark"
+                android:endColor="@color/timeBarGreen"
+                android:angle="270"/>
+        </shape>
+    </item>
+</layer-list>

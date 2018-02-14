@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="top_bar_height">40dp</dimen>
+
+    <dimen name="prayer_label_time_box_size">130dp</dimen>
+    <dimen name="prayer_label_size">50dp</dimen>
+    <dimen name="prayer_time_size">80dp</dimen>
+    <dimen name="prayer_green_size">10dp</dimen>
+    <dimen name="prayer_time_font_size">65sp</dimen>
+    <dimen name="prayer_label_font_size">25sp</dimen>
+    <dimen name="prayer_label_padding">10dp</dimen>
+
+
+    <dimen name="prayer_time_table_padding">40dp</dimen>
+    <dimen name="negative_prayer_time_table_padding">-0dp</dimen>
+</resources>
