@@ -1,9 +1,9 @@
 package screener.mosque.org.mosquescreener.utils;
 
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
-
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -33,6 +33,23 @@ public class DateHelper {
         }
     }
 
+    public static String isoTofullFormatHijriDate(String dateISO, String gregorianDate) {
+        String[] dateSplitted = dateISO.split("-");
+        String day = dateSplitted[2];
+        String month = HijriMonth.values()[Integer.parseInt(dateSplitted[1])].arabicLabel;
+        String year = dateSplitted[0];
+        String dayOfWeek;
+        try {
+            Calendar c = Calendar.getInstance();
+            c.setTime(ISO_DATE_FORMAT.parse(gregorianDate));
+            dayOfWeek = ArabicDayOfWeek.values()[c.get(Calendar.DAY_OF_WEEK) - 1].arabicLabel;
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        return dayOfWeek + " " + day + " " + month + " " + year;
+    }
+
     public static Date dateTimeParse(String dateTime) {
         try {
             return ISO_DATE_TIME_FORMAT.parse(dateTime);
@@ -45,12 +62,66 @@ public class DateHelper {
         if(!TEST_MODE) {
             return minutes * 60 * 1000;
         } else {
-            return  1* 10 * 1000;
+            return  10 * 1000;
         }
     }
 
     public static String dayOfWeek(Date date) {
         return DAY_OF_WEEK_FORMAT.format(date);
+    }
+
+    private enum HijriMonth {
+        MOUHARRAM("Mouharram", "مُحَرَّم"),
+
+        SAFAR("Safar", "صَفَر"),
+
+        RABI_I("Rabia al awal", "رَبيع الأوّل"),
+
+        RABI_II("Rabia ath-thani", "رَبيع الثاني"),
+
+        JUMADA_I("Joumada al oula", "جُمادى الأولى"),
+
+        JUMADA_II("Joumada ath-thania", "جُمادى الآخرة"),
+
+        RAJAB("Rajab", "رَجَب"),
+
+        SHABAN("Chaabane", "شَعْبان"),
+
+        RAMADAN("Ramadan", "رَمَضان"),
+
+        SHAWWAL("Chawwal", "شَوّال"),
+
+        DHU_AL_QIDAH("Dhou al qi`da", "ذو القعدة"),
+
+        DHU_AL_HIJJAH("Dhou al hijja", "ذو الحجة");
+
+        private String label;
+        private String arabicLabel;
+        HijriMonth(String label, String arabicLabel) {
+            this.label = label;
+            this.arabicLabel = arabicLabel;
+        }
+    }
+    private enum ArabicDayOfWeek {
+
+        SUNDAY("الأحَد"),
+
+        MONDAY("الإثْنَين"),
+
+        TUESDAY("الثَلاثاء"),
+
+        WEDNESDAY("الأربَعاء"),
+
+        THURSDAY("الخَميس"),
+
+        FRIDAY("الجُمُعة"),
+
+        SATURDAY("السَبْت");
+
+        private String arabicLabel;
+        ArabicDayOfWeek(String arabicLabel) {
+            this.arabicLabel = arabicLabel;
+        }
     }
 
 }

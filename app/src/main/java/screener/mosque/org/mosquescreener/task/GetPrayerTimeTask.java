@@ -5,7 +5,6 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.icu.util.Calendar;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import screener.mosque.org.mosquescreener.MainActivity;
@@ -26,6 +26,7 @@ import static screener.mosque.org.mosquescreener.utils.DateHelper.SCHEDULE_PREPA
 import static screener.mosque.org.mosquescreener.utils.DateHelper.dateTimeParse;
 import static screener.mosque.org.mosquescreener.utils.DateHelper.dayOfWeek;
 import static screener.mosque.org.mosquescreener.utils.DateHelper.isoTofullFormatDate;
+import static screener.mosque.org.mosquescreener.utils.DateHelper.isoTofullFormatHijriDate;
 
 public class GetPrayerTimeTask extends AsyncTask<Void, Void, Void> {
 
@@ -83,8 +84,11 @@ public class GetPrayerTimeTask extends AsyncTask<Void, Void, Void> {
         }
 
         String day = getProperty("day");
+        String hegireDay = getProperty("hegireDate");
 
-        setLabel(R.id.date_button, isoTofullFormatDate(day));
+        setLabel(R.id.date_button, "\t\t\t " + isoTofullFormatDate(day) + "\t\t\t\t\t\t\t\t\t\u202B" + isoTofullFormatHijriDate(hegireDay, day));
+
+        //setLabel(R.id.date_button, isoTofullFormatHijriDate(hegireDay));
 
         if(!TEST_MODE) {
             for (Prayer prayer : Prayer.values()) {
@@ -118,7 +122,6 @@ public class GetPrayerTimeTask extends AsyncTask<Void, Void, Void> {
             Intent intent = new Intent(MainActivity.getInstance(), prayer.getClassAlarm());
             intent.putExtra("dayOfWeek", dayOfWeek(prayerTimeScheduled).toLowerCase());
             intent.putExtra("prayerTimeScheduled", prayerTimeScheduled.getTime());
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.getInstance(), 0, intent, 0);
             Calendar time = Calendar.getInstance();
             time.setTimeInMillis(prayerTimeScheduled.getTime());
             time.add(Calendar.MINUTE, SCHEDULE_PREPARE_PRAYER_TIME);
@@ -129,6 +132,7 @@ public class GetPrayerTimeTask extends AsyncTask<Void, Void, Void> {
                 timeScheduled = time.getTimeInMillis();
             }
             System.out.println("Prayer = " + prayer + " scheduled at " + new Date(timeScheduled));
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.getInstance(), 0, intent, 0);
             alarmMgr.setExact(AlarmManager.RTC_WAKEUP, timeScheduled, pendingIntent);
         }
     }

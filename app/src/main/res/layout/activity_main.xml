@@ -13,40 +13,44 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_bar_height"
         android:layout_alignParentTop="true" >
-        <TextClock
-            android:translationZ="5dp"
-            android:id="@+id/current_time_top"
+        <ImageView
+            android:id="@+id/logo_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:format12Hour="hh:mm aa"
-            android:format24Hour="kk:mm"
-            android:fontFamily="sans-serif-condensed"
-            android:shadowColor="@color/DarkGrey"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="1"
-            android:textColor="@color/Grey"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"/>
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/ic_masjid_bilal"
+            android:contentDescription="@string/logo_description"/>
         <TextView
-            android:id="@+id/prayer_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/logo_app"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text="@string/header_label"/>
+
+        <TextView
+            android:id="@+id/adhan_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/iqama_timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="Prochaine prière dans 20 minutes"
             android:layout_alignParentEnd="true"
-            android:fontFamily="sans-serif-condensed"
-            android:shadowColor="@color/DarkGrey"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="1"
-            android:textColor="@color/Grey"
-            android:textSize="40sp"
+            android:textColor="@color/colorWhite"
             android:textStyle="bold"
-            android:layout_marginRight="20dp"
-            android:visibility="invisible"
-            />
+            android:textSize="30sp"
+            android:layout_marginRight="30dp"
+            android:visibility="invisible"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -157,46 +161,6 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/prayer_layout"
-        android:layout_centerInParent="true">
-        <TextClock
-            android:translationZ="5dp"
-            android:id="@+id/current_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:format12Hour="hh:mm aa"
-            android:format24Hour="kk:mm"
-            android:padding="2dp"
-            android:shadowColor="@color/DarkGrey"
-            android:shadowDx="3"
-            android:shadowDy="3"
-            android:shadowRadius="1"
-            android:textColor="@color/Grey"
-            android:textSize="140sp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"/>
-
-        <Button
-            android:id="@+id/date_button"
-            android:layout_width="320dp"
-            android:layout_height="40dp"
-            android:background="@drawable/date_background"
-            android:fadingEdge="horizontal"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:scrollHorizontally="true"
-            android:text="@string/default_date"
-            android:textColor="@color/timeBarGreen"
-            android:textSize="20sp"
-            android:layout_below="@+id/current_time"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
-
     <TableLayout
         android:id="@+id/prayer_layout"
         android:layout_width="match_parent"
@@ -223,6 +187,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/prayer_label_padding"
                     android:text="@string/fajr"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -234,6 +199,7 @@
                     android:gravity="center_vertical"
                     android:paddingRight="@dimen/prayer_label_padding"
                     android:text="@string/fajr_arabic"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -273,6 +239,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/prayer_label_padding"
                     android:text="@string/dohr"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -284,6 +251,7 @@
                     android:gravity="center_vertical"
                     android:paddingEnd="@dimen/prayer_label_padding"
                     android:text="@string/dohr_arabic"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -323,6 +291,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/prayer_label_padding"
                     android:text="@string/asr"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -334,6 +303,7 @@
                     android:gravity="center_vertical"
                     android:paddingRight="@dimen/prayer_label_padding"
                     android:text="@string/asr_arabic"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -375,6 +345,7 @@
                     android:text="@string/maghreb"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/White"
+                    android:textStyle="bold"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -386,6 +357,7 @@
                     android:text="@string/maghreb_arabic"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/White"
+                    android:textStyle="bold"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -424,6 +396,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/prayer_label_padding"
                     android:text="@string/ishaa"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -435,6 +408,7 @@
                     android:gravity="center_vertical"
                     android:paddingRight="@dimen/prayer_label_padding"
                     android:text="@string/ishaa_arabic"
+                    android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -482,4 +456,57 @@
         android:layout_below="@+id/top_bar"
         android:visibility="invisible"
         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/prayer_layout"
+        android:layout_centerInParent="true">
+        <TextClock
+            android:translationZ="5dp"
+            android:id="@+id/current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:format12Hour="hh:mm aa"
+            android:format24Hour="kk:mm"
+            android:padding="2dp"
+            android:shadowColor="@color/DarkGrey"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1"
+            android:textColor="@color/Grey"
+            android:textSize="140sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/current_time"
+            android:layout_centerInParent="true">
+            <TextView
+                android:id="@+id/date_button"
+                android:layout_width="450dp"
+                android:layout_height="50dp"
+                android:background="@drawable/date_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:text="@string/default_date"
+                android:textColor="@color/timeBarGreen"
+                android:textSize="30sp"
+
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true">
+                <requestFocus android:focusable="true" android:focusableInTouchMode="true"
+                    android:duplicateParentState="true"
+                    />
+            </TextView>
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.text.method.ScrollingMovementMethod;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
@@ -40,7 +38,6 @@ public class AutoScrollingTextView extends TextView implements ReversibleAnimati
         scrollerInstance(context);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public AutoScrollingTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr,
                                  int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
@@ -56,9 +53,7 @@ public class AutoScrollingTextView extends TextView implements ReversibleAnimati
 
     protected void initAttributes(TypedArray attrArray) {
         String textStyle = attrArray.getString(R.styleable.AutoScrollingTextView_myTextStyle);
-        if (textStyle == null || textStyle.equals("")) {
-
-        } else {
+        if (textStyle != null && !textStyle.equals("")) {
             Typeface tf = Typeface.createFromAsset(getContext().getAssets(), textStyle);
             setTypeface(tf);
         }
@@ -70,7 +65,8 @@ public class AutoScrollingTextView extends TextView implements ReversibleAnimati
         setScroller(scroller);
     }
 
-    @Override    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         if (scroller.isFinished() && isStarted) {
             scroll();
