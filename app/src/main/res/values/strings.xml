@@ -13,6 +13,6 @@
     <string name="maghreb_arabic">مغرب</string>
     <string name="ishaa">Ishaa</string>
     <string name="ishaa_arabic">عشا</string>
-    <string name="header_label">Horaire prière V0.2</string>
+    <string name="header_label">Horaire prière V0.1</string>
     <string name="logo_description">Masjid Bilal</string>
 </resources>
