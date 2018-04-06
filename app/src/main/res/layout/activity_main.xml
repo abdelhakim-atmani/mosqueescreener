@@ -180,32 +180,32 @@
                 android:layout_height="@dimen/prayer_label_time_box_size">
 
                 <TextView
-                    android:id="@+id/fajr"
+                    android:id="@+id/ishaa"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prayer_label_size"
                     android:background="@drawable/prayer_bar"
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/prayer_label_padding"
-                    android:text="@string/fajr"
+                    android:text="@string/ishaa"
                     android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/fajr_arabic"
+                    android:id="@+id/ishaa_arabic"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prayer_label_size"
                     android:gravity="center_vertical"
                     android:paddingRight="@dimen/prayer_label_padding"
-                    android:text="@string/fajr_arabic"
+                    android:text="@string/ishaa_arabic"
                     android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/fajr_time"
+                    android:id="@+id/ishaa_time"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prayer_time_size"
                     android:background="@drawable/prayer_time_label"
@@ -216,7 +216,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintTop_toBottomOf="@id/fajr"
+                    app:layout_constraintTop_toBottomOf="@id/ishaa"
                     tools:layout_editor_absoluteY="50dp" />
 
                 <TextView
@@ -224,111 +224,7 @@
                     android:layout_height="@dimen/prayer_green_size"
                     android:background="@color/timeBarGreen"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/fajr_time" />
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/prayer_label_time_box_size">
-
-                <TextView
-                    android:id="@+id/dohr"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_label_size"
-                    android:background="@drawable/prayer_bar"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/prayer_label_padding"
-                    android:text="@string/dohr"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/prayer_label_font_size"
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/dohr_arabic"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_label_size"
-                    android:gravity="center_vertical"
-                    android:paddingEnd="@dimen/prayer_label_padding"
-                    android:text="@string/dohr_arabic"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/prayer_label_font_size"
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/dohr_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_time_size"
-                    android:background="@drawable/prayer_time_label"
-                    android:gravity="center"
-                    android:text="@string/default_time"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/prayer_time_font_size"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintTop_toBottomOf="@id/dohr"
-                    tools:layout_editor_absoluteY="50dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_green_size"
-                    android:background="@color/timeBarGreen"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/dohr_time" />
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/prayer_label_time_box_size">
-
-                <TextView
-                    android:id="@+id/asr"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_label_size"
-                    android:background="@drawable/prayer_bar"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/prayer_label_padding"
-                    android:text="@string/asr"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/prayer_label_font_size"
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/asr_arabic"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_label_size"
-                    android:gravity="center_vertical"
-                    android:paddingRight="@dimen/prayer_label_padding"
-                    android:text="@string/asr_arabic"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/prayer_label_font_size"
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/asr_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_time_size"
-                    android:background="@drawable/prayer_time_label"
-                    android:gravity="center"
-                    android:text="@string/default_time"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/prayer_time_font_size"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintTop_toBottomOf="@id/asr"
-                    tools:layout_editor_absoluteY="50dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/prayer_green_size"
-                    android:background="@color/timeBarGreen"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/asr_time" />
+                    app:layout_constraintTop_toBottomOf="@id/ishaa_time" />
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
@@ -389,32 +285,32 @@
                 android:layout_height="@dimen/prayer_label_time_box_size">
 
                 <TextView
-                    android:id="@+id/ishaa"
+                    android:id="@+id/asr"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prayer_label_size"
                     android:background="@drawable/prayer_bar"
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/prayer_label_padding"
-                    android:text="@string/ishaa"
+                    android:text="@string/asr"
                     android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/ishaa_arabic"
+                    android:id="@+id/asr_arabic"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prayer_label_size"
                     android:gravity="center_vertical"
                     android:paddingRight="@dimen/prayer_label_padding"
-                    android:text="@string/ishaa_arabic"
+                    android:text="@string/asr_arabic"
                     android:textStyle="bold"
                     android:textSize="@dimen/prayer_label_font_size"
                     android:textColor="@color/colorWhite"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/ishaa_time"
+                    android:id="@+id/asr_time"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/prayer_time_size"
                     android:background="@drawable/prayer_time_label"
@@ -425,7 +321,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintTop_toBottomOf="@id/ishaa"
+                    app:layout_constraintTop_toBottomOf="@id/asr"
                     tools:layout_editor_absoluteY="50dp" />
 
                 <TextView
@@ -433,7 +329,111 @@
                     android:layout_height="@dimen/prayer_green_size"
                     android:background="@color/timeBarGreen"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ishaa_time" />
+                    app:layout_constraintTop_toBottomOf="@id/asr_time" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/prayer_label_time_box_size">
+
+                <TextView
+                    android:id="@+id/dohr"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_label_size"
+                    android:background="@drawable/prayer_bar"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/prayer_label_padding"
+                    android:text="@string/dohr"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/prayer_label_font_size"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dohr_arabic"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_label_size"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="@dimen/prayer_label_padding"
+                    android:text="@string/dohr_arabic"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/prayer_label_font_size"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dohr_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_time_size"
+                    android:background="@drawable/prayer_time_label"
+                    android:gravity="center"
+                    android:text="@string/default_time"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/prayer_time_font_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintTop_toBottomOf="@id/dohr"
+                    tools:layout_editor_absoluteY="50dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_green_size"
+                    android:background="@color/timeBarGreen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dohr_time" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/prayer_label_time_box_size">
+
+                <TextView
+                    android:id="@+id/fajr"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_label_size"
+                    android:background="@drawable/prayer_bar"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/prayer_label_padding"
+                    android:text="@string/fajr"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/prayer_label_font_size"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fajr_arabic"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_label_size"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/prayer_label_padding"
+                    android:text="@string/fajr_arabic"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/prayer_label_font_size"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fajr_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_time_size"
+                    android:background="@drawable/prayer_time_label"
+                    android:gravity="center"
+                    android:text="@string/default_time"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/prayer_time_font_size"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintTop_toBottomOf="@id/fajr"
+                    tools:layout_editor_absoluteY="50dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/prayer_green_size"
+                    android:background="@color/timeBarGreen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fajr_time" />
             </android.support.constraint.ConstraintLayout>
         </TableRow>
     </TableLayout>

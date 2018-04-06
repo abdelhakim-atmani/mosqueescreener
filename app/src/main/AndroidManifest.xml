@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_masjid_bilal"
         android:supportsRtl="true"
         android:largeHeap="true"
+        android:hardwareAccelerated="true"
         android:theme="@android:style/Theme.NoTitleBar">
         <receiver android:name=".schedule.FajrAlarmReceiver" />
         <receiver android:name=".schedule.DohrAlarmReceiver" />

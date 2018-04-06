@@ -58,6 +58,11 @@ public class AsyncFlowGenerator extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void result) {
         super.onPostExecute(result);
 
+        if(isFlowAlreadyStarted()) {
+            System.out.println("Flow already started !!!!");
+            return;
+        }
+
         System.out.println(flowDefinitionList);
         ScreenChain.ScreenChainBuilder flowBuilder = new ScreenChain.ScreenChainBuilder();
 
@@ -130,7 +135,12 @@ public class AsyncFlowGenerator extends AsyncTask<Void, Void, Void> {
         }
     }
 
-    public void startTimer(final long finish, final int timerId, final String label) {
+    private boolean isFlowAlreadyStarted() {
+
+        return View.VISIBLE == MainActivity.getInstance().findViewById(R.id.iqama_timer).getVisibility();
+    }
+
+    private void startTimer(final long finish, final int timerId, final String label) {
         final TextView textTimer = (TextView) MainActivity.getInstance().findViewById(timerId);
         textTimer.setVisibility(View.VISIBLE);
         new CountDownTimer(finish, 1000) {

@@ -4,6 +4,6 @@
         android:drawable="@drawable/background_ikama"
         android:duration="1000" />
     <item
-        android:drawable="@drawable/background2"
+        android:drawable="@drawable/background3"
         android:duration="1000" />
 </animation-list>

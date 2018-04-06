@@ -28,6 +28,12 @@ public class Animations {
     private static final Animation ZOOM_OUT_ADVERT2 = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
     private static final Animation ZOOM_IN_ADVERT2 = new ScaleAnimation(1, 0, 1, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
+    private static final Animation ZOOM_OUT_TIME = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+    private static final Animation ZOOM_IN_TIME = new ScaleAnimation(1, 0, 1, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+    private static final Animation ZOOM_OUT_DATE = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+    private static final Animation ZOOM_IN_DATE = new ScaleAnimation(1, 0, 1, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
     static {
         ZOOM_OUT.setDuration(ANIMATION_DURATION);
         ZOOM_IN.setDuration(ANIMATION_DURATION);
@@ -37,11 +43,15 @@ public class Animations {
         ZOOM_IN_ADVERT1.setDuration(ANIMATION_DURATION);
         ZOOM_OUT_ADVERT2.setDuration(ANIMATION_DURATION);
         ZOOM_IN_ADVERT2.setDuration(ANIMATION_DURATION);
+        ZOOM_OUT_TIME.setDuration(ANIMATION_DURATION);
+        ZOOM_IN_TIME.setDuration(ANIMATION_DURATION);
+        ZOOM_OUT_DATE.setDuration(ANIMATION_DURATION);
+        ZOOM_IN_DATE.setDuration(ANIMATION_DURATION);
     }
 
-    private final static ReversibleAnimation DATE_TEXT_TOP_BAR_ANIMATION = new ViewReversibleAnimation(R.id.date_button, R.anim.date_transition, R.anim.date_transition_reverse);
+    private final static ReversibleAnimation DATE_TEXT_TOP_BAR_ANIMATION = new ViewReversibleAnimation(R.id.date_button, ZOOM_IN_DATE, ZOOM_OUT_DATE);
 
-    private final static ReversibleAnimation CLOCK_TOP_BAR_ANIMATION = new ViewReversibleAnimation(R.id.current_time, R.anim.clock_transition, R.anim.clock_transition_reverse);
+    private final static ReversibleAnimation CLOCK_TOP_BAR_ANIMATION = new ViewReversibleAnimation(R.id.current_time, ZOOM_IN_TIME, ZOOM_OUT_TIME);
 
 
     private final static ReversibleAnimation FAJR_TIME_ANIMATION = new AnimatableReverseAnimation(Prayer.FAJR.getViewID(), R.drawable.animation_prayer_time, R.drawable.animation_prayer_time_reverse);

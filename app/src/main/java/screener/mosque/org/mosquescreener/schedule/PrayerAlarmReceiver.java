@@ -3,10 +3,8 @@ package screener.mosque.org.mosquescreener.schedule;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.webkit.WebView;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -31,15 +29,6 @@ public abstract class PrayerAlarmReceiver extends BroadcastReceiver {
         Log.d(TAG, new Date() + " > Prayer ================> " + getPrayer());
         Log.d(TAG, new Date() + " > Day of week ================> " + intent.getStringExtra("dayOfWeek"));
         Log.d(TAG, new Date() + " > All parameters ================> " + intent.getExtras());
-
-        WebView advert1 = (WebView) MainActivity.getInstance().findViewById(R.id.advert1);
-        advert1.setBackgroundColor(Color.TRANSPARENT);
-        advert1.getSettings().setJavaScriptEnabled(true);
-        advert1.loadUrl("https://mosquee-bilal-clichy-sous-bois.fr/annonce_1/");
-
-        WebView advert2 = (WebView) MainActivity.getInstance().findViewById(R.id.advert2);
-        advert2.getSettings().setJavaScriptEnabled(true);
-        advert2.loadUrl("https://mosquee-bilal-clichy-sous-bois.fr/annonce_2/");
 
         new SetDuaaText().execute();
 

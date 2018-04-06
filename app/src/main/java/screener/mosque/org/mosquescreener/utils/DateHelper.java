@@ -36,7 +36,7 @@ public class DateHelper {
     public static String isoTofullFormatHijriDate(String dateISO, String gregorianDate) {
         String[] dateSplitted = dateISO.split("-");
         String day = dateSplitted[2];
-        String month = HijriMonth.values()[Integer.parseInt(dateSplitted[1])].arabicLabel;
+        String month = HijriMonth.values()[Integer.parseInt(dateSplitted[1]) - 1].arabicLabel;
         String year = dateSplitted[0];
         String dayOfWeek;
         try {
@@ -58,10 +58,16 @@ public class DateHelper {
         }
     }
 
+    static boolean isFirstTime = true;
+
     public static int minutesToMilliseconds(int minutes) {
         if(!TEST_MODE) {
             return minutes * 60 * 1000;
         } else {
+            if(isFirstTime) {
+                isFirstTime = false;
+                return  10 * 1000;
+            }
             return  10 * 1000;
         }
     }
